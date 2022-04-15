@@ -1,4 +1,5 @@
 // Copyright 2022 Google LLC
+// Modification Copyright 2022 Dorian Rudolph
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -144,7 +145,7 @@ absl::StatusOr<std::vector<Result>> StrokeModeler::Predict() const {
         "Stroke model has not yet been initialized");
   }
 
-  if (last_input_ == std::nullopt) {
+  if (last_input_ == absl::nullopt) {
     return absl::FailedPreconditionError(
         "Cannot construct prediction when no stroke is in-progress");
   }
